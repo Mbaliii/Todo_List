@@ -1,0 +1,73 @@
+*{
+    padding: 10x;
+    margin: 5px;
+    box-sizing: border-box ;
+}
+
+.container{
+    padding: 5px;
+    background-color: rgb(231, 214, 190);
+}
+
+.inputPart{
+    padding: 30px;
+    text-align: center;
+    color:darkslategrey;
+}
+
+.inputPart input{
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #000000;
+    width: 90%;
+}
+
+.inputPart button{
+    /* width: 15px; */
+    padding: 8px 10px;
+    color: black;
+    font-size: 18px;
+    border: none;
+    border: 1px solid white
+}
+
+.inputPart button:hover{
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.taskList {
+    margin-top: 10px;
+}
+
+.taskList ul{
+    list-style-type: none;
+}
+
+.taskList ul li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskList ul li:hover{
+    cursor: pointer;
+}
+
+
+.taskList ul li span{
+    padding: 10px 10px;
+
+}
+
+.taskList ul li span:nth-child(2):hover{
+    color: white;
+    /* background-color: rgb(205, 210, 214); */
+    cursor: pointer;
+}
+
+.done{
+    text-decoration: line-through;
+
+}
