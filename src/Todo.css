@@ -23,7 +23,6 @@
 }
 
 .inputPart button{
-    /* width: 15px; */
     padding: 8px 10px;
     color: black;
     font-size: 18px;
@@ -63,7 +62,6 @@
 
 .taskList ul li span:nth-child(2):hover{
     color: white;
-    /* background-color: rgb(205, 210, 214); */
     cursor: pointer;
 }
 
