@@ -8,37 +8,21 @@
     },
     {
       "name": "Mbali",
-      "password": "MBALENHLEKHUMALO",
+      "password": "ENHLEKHUMALO03",
       "email": "shezi7314@gmail.com",
       "id": 2
-    },
-    {
-      "name": "Enhle ",
-      "password": "MBALENHLEHUMALO",
-      "email": "shezi7314@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "Mbali ",
-      "password": "MBALENHLEKHUMALO",
-      "email": "shezi7314@gmail.com",
-      "id": 4
     },
     {
       "name": "Mbali",
       "password": "MBALENHLEKHUMALO",
       "email": "shezi7314@gmail.com",
-      "id": 5
+      "id": 3
     },
     {
-      "password": "MBLENHLEKHUMALO",
+      "name": "Mbali",
+      "password": "MBALENHLKH",
       "email": "shezi7314@gmail.com",
-      "id": 6
-    },
-    {
-      "password": "MBLENHLEKHUMALO",
-      "email": "shezi7314@gmail.com",
-      "id": 7
+      "id": 4
     }
   ]
 }
