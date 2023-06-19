@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './Todo.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { addTodo } from './redux/todoSlice';
+import todoSlice, { addTodo } from './redux/todoSlice';
+import { toast } from "react-toastify";
 
 function Todo() {
 	// const [value, setValue] = useState
@@ -20,11 +21,42 @@ function Todo() {
 	// 	);
 	// };
 
+	// const navigate = useNavigate();
+
+	const IsValidate = () => {
+		let isproceed = true;
+        let errormessage = 'Please enter any-task';
+        if (Todo === null || Todo === '') {
+            isproceed = false;
+            errormessage += ' Todo';
+        }
+	}
+
+	const handlesubmit = (e) => {
+        e.preventDefault();
+        let regobj = {};
+        if (IsValidate()) {
+            //console.log(regobj);
+            fetch("http://localhost:3000/work", {
+                method: "POST",
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(regobj)
+            }).then((res) => {
+                toast.success('Task created.')
+                // navigate('/todolist');
+            })
+			// .catch((err) => {
+            //     toast.error('Failed :' + err.message);
+            // });
+        }
+    }
+
+
 
 	return (
 		
 		<div className='container'>
-			{/* <form onSubmit={onSubmit} className='form-inline mt-3 '/> */}
+			<form className='form-inline mt-3' onSubmit={handlesubmit}/>
 			<div className='inputPart'>
 				<h2>YOUR TODO LIST :)</h2>
 				<input type="text" placeholder="Add Task" onChange={e => setTask(e.target.value)} />

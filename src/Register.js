@@ -40,6 +40,7 @@ const Register = () => {
                 toast.warning('Please enter the valid email')
             }
         }
+        
         return isproceed;
     }
 
@@ -49,7 +50,7 @@ const Register = () => {
         let regobj = { name, password, email };
         if (IsValidate()) {
             //console.log(regobj);
-            fetch("http://localhost:5000/users", {
+            fetch("http://localhost:3000/users", {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(regobj)

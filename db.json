@@ -8,21 +8,19 @@
     },
     {
       "name": "Mbali",
-      "password": "ENHLEKHUMALO03",
+      "password": "MBALENHLEKHUMALO",
       "email": "shezi7314@gmail.com",
       "id": 2
     },
     {
-      "name": "Mbali",
       "password": "MBALENHLEKHUMALO",
       "email": "shezi7314@gmail.com",
       "id": 3
-    },
+    }
+  ],
+  "work": [
     {
-      "name": "Mbali",
-      "password": "MBALENHLKH",
-      "email": "shezi7314@gmail.com",
-      "id": 4
+
     }
   ]
 }
