@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -16,15 +14,33 @@ const Register = () => {
 
     const IsValidate = () => {
         let isproceed = true;
-        let errormessage = 'Please enter the value in ';
+        let errormessage = 'Enter the correct value ';
+        // should begin with a lower or uppercase letter// 5 to 23 characters
         if (name === null || name === '') {
             isproceed = false;
             errormessage += ' Name';
         }
+        
+        
+    //pasword requires 1 lowercase letter, 1 uppercaseletter,1 digit and 1 special character 
         if (password === null || password === '') {
             isproceed = false;
             errormessage += ' Password';
         }
+
+        if (!isproceed) {
+            toast.warning(errormessage)
+        } else {
+            if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/.test(password)) {
+
+            } else {
+                isproceed = false;
+                toast.warning('Please enter the valid password')
+            }
+        }
+        
+
+
         if (email === null || email === '') {
             isproceed = false;
             errormessage += ' Email';
@@ -95,7 +111,7 @@ const Register = () => {
                         </div>
                         <div className="card-footer">
                             <button type="submit" className="btn btn-primary">Register</button> |
-                            {/* <Link to={'/login'} className="btn btn-danger">Close</Link> */}
+                            <Link to={'/login'} className="btn btn-danger">Login </Link>
                             <Link to={'/home'} className="btn-btn-primary" >Home</Link>
                         </div>
                     </div>
@@ -108,3 +124,8 @@ const Register = () => {
 }
 
 export default Register;
+
+
+
+
+
