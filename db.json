@@ -1,5 +1,18 @@
 {
   "users": [
+    {
+      "name": "Mbali",
+      "password": "!@Mbali3",
+      "email": "shezi7314@gmail.com",
+      "id": 1
+    },
+    {
+      "password": "!@Mbali3",
+      "email": "shezi7314@gmail.com",
+      "id": 2
+    }
   ],
-  "work": []
+  "work": [
+    
+  ]
 }

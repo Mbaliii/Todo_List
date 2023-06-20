@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './Todo.css'
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
 import "./css/main.css";
 
@@ -10,7 +9,6 @@ function Todo() {
 		{ id: 1, task: " ", done: false }
 	])
 	const [task, setTask] = useState('')
-	const dispacth = useDispatch();
 
 	const navigate = useNavigate();
 
@@ -25,7 +23,7 @@ function Todo() {
 		if (!isproceed) {
 			toast.warning(errormessage)
 		} else {
-			if (/^[A-z][A-z0-9-_]{3,23}$/.test(Todo)) {
+			if (/^[A-z][A-z0-9-_]{3,23}$/.test(task)) {
 			} else {
 				isproceed = false;
 				toast.warning('Please enter a task')
@@ -35,22 +33,41 @@ function Todo() {
 		return isproceed
 
 	}
-
 	const handlesubmit = (e) => {
-		e.preventDefault();
-		let regobj = {};
-		if (IsValidate()) {
-			fetch("http://localhost:3000/work", {
-				method: "POST",
-				headers: { 'content-type': 'application/json' },
-				body: JSON.stringify(regobj)
-			}).then((res) => {
-				toast.success('Task created.')
-				navigate('/todolist');
-			})
+        e.preventDefault();
+        let regobj = { task };
+        if (IsValidate()) {
+            //console.log(regobj);
+            fetch("http://localhost:3000/users", {
+                method: "POST",
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(regobj)
+            }).then((res) => {
+                toast.success('Registered successfully.')
+                navigate('/login');
+            }).catch((err) => {
+                toast.error('Failed :' + err.message);
+            });
+        }
+    }
 
-		}
-	}
+	// const handlesubmit = (e) => {
+	// 	e.preventDefault();
+	// 	let regobj = {task};
+	// 	if (IsValidate()) {
+	// 		fetch("http://localhost:3000/users", {
+	// 			method: "POST",
+	// 			headers: { 'content-type': 'application/json' },
+	// 			body: JSON.stringify(regobj)
+	// 		}).then((res) => {
+	// 			toast.success('Task created.')
+	// 			navigate('/todolist');
+	// 		}).catch((err) => {
+	// 			toast.error('Failed : ' + err.message);
+	// 		})
+
+	// 	}
+	// }
 
 
 
@@ -58,13 +75,13 @@ function Todo() {
 
 		<div className='container'>
 			<form className='form-inline mt-3' onSubmit={handlesubmit}></form>
-				<div className='inputPart'>
-					<h2>YOUR TODO LIST :)</h2>
-					<input type="text" placeholder="Add Task" onChange={e => setTask(e.target.value)} />
-					<button className='addBtn' onClick={Add}>Add</button>
+			<div className='inputPart'>
+				<h2>YOUR TODO LIST :)</h2>
+				<input type="text" placeholder="Add Task" onChange={e => setTask(e.target.value)} />
+				<button className='addBtn' onClick={Add}>Add</button>
 
-				</div>
-			
+			</div>
+
 			<div className='taskList'>
 				<ul>
 					{list.map((l, i) => (
