@@ -10,9 +10,18 @@
       "password": "!@Mbali3",
       "email": "shezi7314@gmail.com",
       "id": 2
+    },
+    {
+      "name": "Khumalo",
+      "password": "Mbali@!#4",
+      "email": "shezi7314@gmail.com",
+      "id": 3
+    },
+    {
+      "password": "Mbali@!#4",
+      "email": "shezi7314@gmail.com",
+      "id": 4
     }
   ],
-  "work": [
-    
-  ]
+  "work": []
 }
